@@ -11,13 +11,13 @@ class Board():
 			self.round()
 		if self.points[0] < self.points[1]:
 			return self.player_one.__name__+" wins"
-		elif self.points[1] < self.points[0]:
-			return self.player_one.__name__+" wins"
+		elif self.points[0] > self.points[1]:
+			return self.player_two.__name__+" wins"
 
 		else:
 			return "It's a tie"
 	def round(self):
-		self.playermoves.append([self.player_one(), self.player_two()])
+		self.playermoves.append([self.player_one(self), self.player_two(self)])
 		if self.playermoves[-1][0] == True and self.playermoves[-1][1] == True:
 			self.points[0] += 1
 			self.points[1] += 1
