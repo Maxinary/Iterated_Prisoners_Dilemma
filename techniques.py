@@ -19,6 +19,7 @@ def tit_for_tat(board):
 
 def massive_retaliatory_strike(board):
 	for i in board.playermoves:
-		if i[0] == False:
+		if i[0] == False or i[1] == False:
+			print("Betrayal")
 			return False
 	return True
